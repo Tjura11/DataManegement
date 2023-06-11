@@ -11,7 +11,15 @@ int rollDice(){
     return rand() % 6 + 1; // 1から6までのランダムな数を生成
 }
 
+void scanName(){
+    string name;
+    cout << "what is your name?" << endl;
+    cin >> name;
+    cout << "Hello, " << name << "!" << endl;
+}
+
 int main(){
+    scanName();
     srand(time(NULL)); // よりランダムにするため
     int dice1 = rollDice();
     int dice2 = rollDice();
