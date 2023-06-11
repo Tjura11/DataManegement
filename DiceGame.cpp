@@ -6,16 +6,21 @@
 #include <random>
 
 using namespace std;
+string name;
 
 int rollDice(){
     return rand() % 6 + 1; // 1から6までのランダムな数を生成
 }
 
 void scanName(){
-    string name;
     cout << "what is your name?" << endl;
     cin >> name;
     cout << "Hello, " << name << "!" << endl;
+}
+
+void WonORLost(int t, string n){
+    if(t > 7) cout << n << " won!" << endl; 
+    else cout << n << " lost!" << endl;
 }
 
 int main(){
@@ -29,6 +34,7 @@ int main(){
     cout << "Dice 1: " << dice1 << endl;
     cout << "Dice 2: " << dice2 << endl;
     cout << "Total value: " << total << endl;
+    WonORLost(total, name);
 
     return 0;
 }
